@@ -65,10 +65,10 @@ export default {
           if(res.data.token != null && res.data.code ==0){
             This.token = res.data.token;
             window.localStorage.setItem("token",This.token);
-            This.alertMessage(This,0,"注册成功，正在跳转登录界面，请稍等");
+            This.alertMessage(This,0,"登录成功，正在跳转登录界面，请稍等");
             setTimeout(function(){
               This.$router.push('/Index');
-            },4000);
+            },2000);
 
           }
       },function(){

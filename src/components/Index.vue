@@ -12,7 +12,6 @@
                     </div>
                 </el-col>
             </el-row>
-            
         </el-header>
         <el-container>
             <el-aside width="200px;">
@@ -32,14 +31,15 @@
                     <el-submenu index="2">
                         <template slot="title"><i class="el-icon-menu"></i>商品信息管理</template>
                         <el-menu-item-group>
-                          <template slot="title">商品信息查询</template>
-                          <el-menu-item index="2-1">选项1</el-menu-item>
-                          <el-menu-item index="2-2">选项2</el-menu-item>
+                          <!-- <template slot="title">商品信息查询</template> -->
+                          <el-menu-item index="2-1" @click.native="menuChange('GoodAdd')">商品添加</el-menu-item>
+                          <el-menu-item index="2-2">商品分配</el-menu-item>
+                          <el-menu-item index="2-3">商品修改</el-menu-item>
                         </el-menu-item-group>
 
-                        <el-menu-item-group title="分组2">
+                        <!-- <el-menu-item-group title="分组2">
                           <el-menu-item index="2-3">选项3</el-menu-item>
-                        </el-menu-item-group>
+                        </el-menu-item-group> -->
 
                         <!-- <el-submenu index="2-4">
                           <template slot="title">选项4</template>
@@ -77,12 +77,14 @@
 import SortAdd from '@/components/SortAdd'
 import SortSelect from '@/components/SortSelect'
 import HelloWorld from '@/components/HelloWorld'
+import GoodAdd from '@/components/GoodAdd'
 export default {
   name: 'Index',
   components:{
     SortAdd,
     HelloWorld,
-    SortSelect
+    SortSelect,
+    GoodAdd
   },
   data () {
     return {
@@ -107,21 +109,18 @@ export default {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
-    line-height: 60px;
   }
   
   .el-aside {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
-    line-height: 200px;
   }
   
   .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 160px;
   }
   
   body > .el-container {

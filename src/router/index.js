@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Index from '@/components/Index'
 import SortAdd from '@/components/SortAdd'
+import GoodAdd from '@/components/GoodAdd'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
         default:Index,
         main:SortAdd
       }
+    },{
+      path: '/goodAdd',
+      name: 'GoodAdd',
+      component: GoodAdd
     }
   ]
 })
