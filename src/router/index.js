@@ -5,6 +5,9 @@ import Login from '@/components/Login'
 import Index from '@/components/Index'
 import SortAdd from '@/components/SortAdd'
 import GoodAdd from '@/components/GoodAdd'
+import NoticeAdd from '@/components/NoticeAdd'
+import NoticeSelect from '@/components/NoticeSelect'
+import HotViewHome from '@/components/HotViewHome'
 
 Vue.use(Router)
 
@@ -30,6 +33,18 @@ export default new Router({
       path: '/goodAdd',
       name: 'GoodAdd',
       component: GoodAdd
+    },{
+      path: '/noticeAdd',
+      name: 'NoticeAdd',
+      component: NoticeAdd
+    },{
+      path: '/noticeSelect',
+      name: 'NoticeSelect',
+      component: NoticeSelect
+    },{
+      path: '/hotViewHome',
+      name: 'HotViewHome',
+      component: HotViewHome
     }
   ]
 })

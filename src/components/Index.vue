@@ -5,10 +5,10 @@
             <el-row :gutter="0">
                 <el-col :span="8" style="height:1px;"><div class="grid-content bg-purple"> </div></el-col>
                 <el-col :span="6" style="height:1px;"><div class="grid-content bg-purple"> </div></el-col>
-                <el-col :span="6" style="height:1px;"><div class="grid-content bg-purple"><span @click="loginOut()">注销</span> </div></el-col>
+                <el-col :span="6" style="height:1px;line-height:50px;"><div class="grid-content bg-purple"><span @click="loginOut()">注销</span> </div></el-col>
                 <el-col :span="4" style="text-align:left;">
                     <div class="grid-content bg-purple">
-                        <span style="font-size:30px;" class="el-icon-user-solid"></span>
+                        <span style="font-size:30px;line-height:50px;" class="el-icon-user-solid"></span>
                     </div>
                 </el-col>
             </el-row>
@@ -16,17 +16,14 @@
         <el-container>
             <el-aside width="200px;">
             
-                <el-menu :default-openeds="['1', '3']">
-                    <el-submenu index="1">
+                <el-menu :default-openeds="['1']" style="text-align:left;">
+                    <el-submenu index="1"  style="width:200px;">
                         <template slot="title"><i class="el-icon-message"></i>商品分类管理</template>
-                        <el-menu-item-group>
+                        <el-menu-item-group style="text-align:left;">
                           <el-menu-item index="1-1" @click.native="menuChange('SortSelect')">查询修改分类</el-menu-item>
                           <el-menu-item index="1-1" @click.native="menuChange('SortAdd')">添加分类</el-menu-item>
+                          <el-menu-item index="1-1" @click.native="menuChange('HotViewHome')">展示的分类管理</el-menu-item>
                         </el-menu-item-group>
-                        <!-- <el-submenu index="1-4">
-                        <template slot="title">选项4</template>
-                        <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-                        </el-submenu> -->
                     </el-submenu>
                     <el-submenu index="2">
                         <template slot="title"><i class="el-icon-menu"></i>商品信息管理</template>
@@ -36,30 +33,14 @@
                           <el-menu-item index="2-2">商品分配</el-menu-item>
                           <el-menu-item index="2-3">商品修改</el-menu-item>
                         </el-menu-item-group>
-
-                        <!-- <el-menu-item-group title="分组2">
-                          <el-menu-item index="2-3">选项3</el-menu-item>
-                        </el-menu-item-group> -->
-
-                        <!-- <el-submenu index="2-4">
-                          <template slot="title">选项4</template>
-                          <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-                        </el-submenu> -->
                     </el-submenu>
-                    <el-submenu index="3">
-                        <template slot="title"><i class="el-icon-setting"></i>导航三</template>
+                   
+                    <el-submenu index="5">
+                        <template slot="title"><i class="el-icon-setting"></i>发布通知  </template>
                         <el-menu-item-group>
-                        <template slot="title">分组一</template>
-                        <el-menu-item index="3-1">选项1</el-menu-item>
-                        <el-menu-item index="3-2">选项2</el-menu-item>
+                        <el-menu-item index="5-1" @click.native="menuChange('NoticeAdd')">发布通知</el-menu-item>
+                        <el-menu-item index="5-2" @click.native="menuChange('NoticeSelect')">查看所有通知</el-menu-item>
                         </el-menu-item-group>
-                        <el-menu-item-group title="分组2">
-                        <el-menu-item index="3-3">选项3</el-menu-item>
-                        </el-menu-item-group>
-                        <el-submenu index="3-4">
-                        <template slot="title">选项4</template>
-                        <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-                        </el-submenu>
                     </el-submenu>
                 </el-menu>
             
@@ -78,13 +59,19 @@ import SortAdd from '@/components/SortAdd'
 import SortSelect from '@/components/SortSelect'
 import HelloWorld from '@/components/HelloWorld'
 import GoodAdd from '@/components/GoodAdd'
+import NoticeAdd from '@/components/NoticeAdd'
+import NoticeSelect from '@/components/NoticeSelect'
+import HotViewHome from '@/components/HotViewHome'
 export default {
   name: 'Index',
   components:{
     SortAdd,
     HelloWorld,
     SortSelect,
-    GoodAdd
+    GoodAdd,
+    NoticeAdd,
+    NoticeSelect,
+    HotViewHome
   },
   data () {
     return {
